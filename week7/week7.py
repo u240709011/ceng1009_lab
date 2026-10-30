@@ -81,16 +81,64 @@
 # wn.exitonclick()
 
 
-def PositiveorNot(x):
-    if x > 0:
-        return "Positive"
-    elif x == 0:
-        return "Zero"
-    else:
-        return "Negative"
+# def PositiveorNot(x):
+#     if x > 0:
+#         return "Positive"
+#     elif x == 0:
+#         return "Zero"
+#     else:
+#         return "Negative"
+#
+# numbers=[-7,5,0]
+# for i in numbers:
+#     print(PositiveorNot(i))
+# x=int(input("Enter a number: "))
+# print(PositiveorNot(x))
 
-numbers=[-7,5,0]
-for i in numbers:
-    print(PositiveorNot(i))
-x=int(input("Enter a number: "))
-print(PositiveorNot(x))
+
+import turtle
+
+def drawBar(t, height,gap):
+    t.penup()
+    t.left(90)
+    t.forward(height+gap)
+    t.write(" "+str(height))
+    t.backward(height+gap)
+    t.right(90)
+    t.pendown()
+
+    t.begin_fill()
+    t.left(90)
+    t.forward(height)
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+
+def barChart(data):
+    maxheight = max(data)
+    num_bars = len(data)
+    border = 10
+
+    gap = (maxheight - border) / 25
+
+    wn = turtle.Screen()
+    wn.bgcolor("lightgreen")
+
+    right = 40 * num_bars + border
+    top = maxheight + 4 * border
+
+    wn.setworldcoordinates(-border, -border, right, top)
+    t = turtle.Turtle()
+    t.color("blue")
+    t.fillcolor("red")
+    t.pensize(3)
+    for height in data:
+        drawBar(t, height, gap)
+
+    wn.exitonclick()
+
+data = [48, 117, 200, 240, 160, 260, 220]
+barChart(data)
