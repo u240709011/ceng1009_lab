@@ -76,11 +76,11 @@
 #         print("WRONG")
 # test(replace("Missisippi",'i','I'),"MIssIsIppI")
 
-def max_value(list):
-    maximum = list[0]
-    for item in list:
-        if item > maximum:
-            maximum = item
-    return maximum
-my_list = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(max_value(my_list))
+# def max_value(list):
+#     maximum = list[0]
+#     for item in list:
+#         if item > maximum:
+#             maximum = item
+#     return maximum
+# my_list = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(max_value(my_list))
